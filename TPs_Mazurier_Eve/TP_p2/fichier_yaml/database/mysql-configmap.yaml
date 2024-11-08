@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace : middle
+  name: mysql-configmap
+  labels:
+    app: mysql
+data:
+  MYSQL_USER: mazurier
+  MYSQL_DATABASE: wordpress

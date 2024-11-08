@@ -1,0 +1,63 @@
+Question 1: Qu'est-ce qu'un Pod en Kubernetes ?
+Réponse : B. Un groupe de conteneurs agissant comme une unité logique
+Explication : Un Pod est l'unité de déploiement de base en Kubernetes, qui peut contenir un ou plusieurs conteneurs fonctionnant ensemble.
+
+Question 2: Quelle commande est utilisée pour créer un Namespace ?
+Réponse : B. kubectl create namespace <nom-du-namespace>
+Explication : La commande correcte pour créer un Namespace est kubectl create namespace.
+
+Question 3: Lequel des composants suivants est responsable de la communication avec l'API Server ?
+Réponse : A. kubelet
+Explication : Kubelet interagit avec l'API Server pour obtenir l'état souhaité et gérer les pods sur le nœud.
+
+Question 4: Qu'est-ce qu'un ConfigMap dans Kubernetes ?
+Réponse : B. Une ressource pour stocker des données de configuration non sensibles
+Explication : Un ConfigMap est utilisé pour stocker des données de configuration non sensibles et peut être injecté dans les applications sous forme de variables d'environnement ou de fichiers.
+
+Question 5: Comment exécuter un Job planifié en Kubernetes ?
+Réponse : B. En utilisant un CronJob
+Explication : Un CronJob permet de planifier l'exécution répétée de jobs à des intervalles définis.
+
+Question 6: Qu'est-ce qu'un Deployment en Kubernetes ?
+Réponse : B. Un contrôleur responsable de la gestion des mises à jour de vos pods
+Explication : Un Deployment gère le déploiement et les mises à jour des Pods de manière déclarative.
+
+Question 7: Quel composant est responsable de l'équilibrage de charge et du basculement entre les pods dans un Service ?
+Réponse : B. kube-proxy
+Explication : Kube-proxy gère le routage du trafic réseau pour les Services en équilibrant la charge entre les Pods.
+
+Question 8: Comment afficher les journaux d'un pod particulier en cours d'exécution ?
+Réponse : A. kubectl logs <pod-name>
+Explication : La commande kubectl logs permet d'afficher les journaux d'un Pod spécifique.
+
+Question 9: Que se passe-t-il lorsqu'un Pod échoue ?
+Réponse : A. Il est recréé par une réplication
+Explication : Si un Pod géré par un contrôleur comme un Deployment échoue, il est automatiquement recréé pour maintenir le nombre souhaité de réplicas.
+
+Question 10: Quelle est la différence entre ConfigMap et Secret ?
+Réponse : C. Secret est pour des données sensibles
+Explication : Un Secret est utilisé pour stocker des informations sensibles (comme des mots de passe), tandis qu'un ConfigMap est pour des données non sensibles.
+
+Question 11: Qu'est-ce qu'un Namespace en Kubernetes ?
+Réponse : B. Une méthode de partitionnement du cluster en plusieurs environnements virtuels
+Explication : Les Namespaces permettent de diviser logiquement un cluster pour différents environnements ou équipes.
+
+Question 12: Comment Kubernetes permet-il de réclamer un volume ?
+Réponse : C. PersistentVolumeClaim
+Explication : Un PersistentVolumeClaim (PVC) est utilisé par les pods pour réclamer des volumes persistants.
+
+Question 13: Quel est le rôle de l'API Server dans l'architecture de Kubernetes ?
+Réponse : C. Il expose l'API RESTful de Kubernetes et agit en tant que point d'entrée pour toutes les opérations d'administration du cluster.
+Explication : L'API Server est le point d'entrée principal pour toutes les commandes de gestion du cluster.
+
+Question 14: Comment Kubernetes assure-t-il la sécurité et l'isolation des applications dans un cluster partagé ?
+Réponse : B. En appliquant le Role-Based Access Control (RBAC), les Pod Security Policies (PSP), et les Network Policies pour gérer les autorisations et l'isolation des pods.
+Explication : Kubernetes utilise des politiques de sécurité (RBAC, PSP, Network Policies) pour gérer l'isolation et les autorisations des applications.
+
+Question 15: Quel est l'impact de la définition incorrecte des "requests" et "limits" des ressources (CPU et mémoire) pour les pods dans un cluster Kubernetes, et comment cette configuration affecte-t-elle le Scheduler et le Quality of Service (QoS) des pods ?
+Réponse : A. Si les "requests" sont trop basses, le Scheduler peut placer trop de pods sur un nœud, entraînant une surallocation, tandis que des "limits" trop élevées peuvent provoquer un throttling intensif des applications.
+Explication : Les "requests" et "limits" influencent la planification et les performances des pods ; des valeurs incorrectes peuvent entraîner une surallocation ou des limitations de ressources.
+
+Bonus: Laquelle des affirmations suivantes n'est pas incorrecte concernant l'usage des ConfigMaps et des Secrets dans un cluster Kubernetes ?
+Réponse : C. Les Secrets sont stockés de manière encodée en base64 dans etcd, mais ils ne sont pas chiffrés par défaut.
+Explication : Bien que les Secrets soient encodés en base64, ils ne sont pas chiffrés par défaut et peuvent nécessiter un chiffrement supplémentaire pour plus de sécurité

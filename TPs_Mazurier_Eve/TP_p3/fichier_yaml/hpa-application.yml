@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: mon-application
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: mon-application  # Le nom de votre Deployment
+  minReplicas: 2  # Le nombre minimum de réplicas
+  maxReplicas: 5  # Le nombre maximum de réplicas
+  targetCPUUtilizationPercentage: 50  # Si l'utilisation du CPU dépasse 50%, un nouveau pod sera créé
